@@ -71,13 +71,14 @@ const Form = ({
         window.location.reload();
       } else {
         console.log("error");
-        if (!isAuthPage) toast.error(res?.data?.message, { autoClose: 4000 });
-        toast.error("Unauthorized");
+         toast.error(res?.data?.message, { autoClose: 4000 });
+    
       }
     } catch (error) {
       // if (!isAuthPage) toast.error(res?.data?.message, { autoClose: 4000 })
         if (!isAuthPage) toast.error("student already present", { autoClose: 4000 });;
       if (res?.status == 400) setError(error.data?.error[0].msg);
+      console.log(error);
       
     }
     console.log(error);
